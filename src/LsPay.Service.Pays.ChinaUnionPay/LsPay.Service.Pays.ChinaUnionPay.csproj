@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83DE52DF-9618-4B64-A147-F70CA4935FD2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LsPay.Service.Pays.ChinaUnionPay</RootNamespace>
+    <AssemblyName>LsPay.Service.Pays.ChinaUnionPay</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MessageTemplate.cs" />
+    <Compile Include="PayUntity.cs" />
+    <Compile Include="Pay\ChinaUnionPayFactory.cs" />
+    <Compile Include="Pay\CreditCardPay.cs" />
+    <Compile Include="Pay\ICCardPay.cs" />
+    <Compile Include="Pay\MagCardPay.cs" />
+    <Compile Include="PreTreatment\ICCardPayPreTreatment.cs" />
+    <Compile Include="PreTreatment\MagCardPayPreTreatment.cs" />
+    <Compile Include="PreTreatment\PayPreTreatmentFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LsPay.Service.Interface\LsPay.Service.Interface.csproj">
+      <Project>{cf26cf66-ef0b-44b0-ad24-460b9f052221}</Project>
+      <Name>LsPay.Service.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LsPay.Service.ISO8583\LsPay.Service.ISO8583.csproj">
+      <Project>{8ab0cdcd-a0b2-4ef7-9671-d6217701ea28}</Project>
+      <Name>LsPay.Service.ISO8583</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LsPay.Service.Util\LsPay.Service.Util.csproj">
+      <Project>{69f98f12-0fab-4804-a80b-209819717c5a}</Project>
+      <Name>LsPay.Service.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LsPay.Service.Wcf.Model\LsPay.Service.Wcf.Model.csproj">
+      <Project>{5d25108f-60f5-432a-8ae9-cecd003b5f8a}</Project>
+      <Name>LsPay.Service.Wcf.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

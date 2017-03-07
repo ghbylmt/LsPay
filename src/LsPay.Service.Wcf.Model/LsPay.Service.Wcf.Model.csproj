@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D25108F-60F5-432A-8AE9-CECD003B5F8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LsPay.Service.Wcf.Model</RootNamespace>
+    <AssemblyName>LsPay.Service.Wcf.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alipay\CancelModel.cs" />
+    <Compile Include="Alipay\ExtendParams.cs" />
+    <Compile Include="Alipay\GoodsDetailModel.cs" />
+    <Compile Include="Alipay\PrecreateModel.cs" />
+    <Compile Include="Alipay\QueryModel.cs" />
+    <Compile Include="Alipay\RefundModel.cs" />
+    <Compile Include="Alipay\response\BaseResponseModel.cs" />
+    <Compile Include="Alipay\response\CancelResponseModel.cs" />
+    <Compile Include="Alipay\response\PrecreateResponseModel.cs" />
+    <Compile Include="Alipay\response\QueryResponseModel.cs" />
+    <Compile Include="Alipay\response\RefundResponseModel.cs" />
+    <Compile Include="Alipay\response\TradepayResponseModel.cs" />
+    <Compile Include="Alipay\response\TradeResultCode.cs" />
+    <Compile Include="Alipay\response\TradeStatus.cs" />
+    <Compile Include="Alipay\TradepayModel.cs" />
+    <Compile Include="Card\Card.cs" />
+    <Compile Include="Card\ICCard.cs" />
+    <Compile Include="Card\MagCard.cs" />
+    <Compile Include="PayResponseModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignResponseModel.cs" />
+    <Compile Include="VisualSelfServiceEquipment.cs" />
+    <Compile Include="WxPay\CloseOrderModel.cs" />
+    <Compile Include="WxPay\DownloadBillModel.cs" />
+    <Compile Include="WxPay\micropay\MicropayModel.cs" />
+    <Compile Include="WxPay\NativePay\UnifiedOrderModel.cs" />
+    <Compile Include="WxPay\OrderQueryModel.cs" />
+    <Compile Include="WxPay\RefundModel.cs" />
+    <Compile Include="WxPay\RefundQueryModel.cs" />
+    <Compile Include="WxPay\response\BaseBusinessResponseModel.cs" />
+    <Compile Include="WxPay\response\CloseOrderResponseModel.cs" />
+    <Compile Include="WxPay\response\ErrorCode.cs" />
+    <Compile Include="WxPay\response\MicropayResponseModel.cs" />
+    <Compile Include="WxPay\response\OrderQueryResponseModel.cs" />
+    <Compile Include="WxPay\response\RefundChannel.cs" />
+    <Compile Include="WxPay\response\RefundResponseModel.cs" />
+    <Compile Include="WxPay\response\ResponseModel.cs" />
+    <Compile Include="WxPay\response\ResultCode.cs" />
+    <Compile Include="WxPay\response\ReturnCode.cs" />
+    <Compile Include="WxPay\response\TradeState.cs" />
+    <Compile Include="WxPay\response\UnifiedOrderResponseModel.cs" />
+    <Compile Include="WxPay\ShortUrlModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LsPay.Service.Util\LsPay.Service.Util.csproj">
+      <Project>{69f98f12-0fab-4804-a80b-209819717c5a}</Project>
+      <Name>LsPay.Service.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

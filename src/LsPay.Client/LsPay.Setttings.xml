@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <TerminalNo>00010006</TerminalNo>
+  <CardReader_COM>COM3</CardReader_COM>
+  <PasswordKeyBoard_COM>5</PasswordKeyBoard_COM>
+  <PayPreTreatmentService>net.tcp://172.18.14.64:8808/PayPreTreatmentService</PayPreTreatmentService>
+  <PayService>net.tcp://172.18.14.64:8809/PayService</PayService>
+  <AliPayService>net.tcp://172.18.14.64:8810/AliPayService</AliPayService>
+  <WxPayService>net.tcp://172.18.14.64:8811/WxPayService</WxPayService>
+</Settings>
