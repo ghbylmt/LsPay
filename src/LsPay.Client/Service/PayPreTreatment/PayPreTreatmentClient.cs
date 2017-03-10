@@ -1,4 +1,4 @@
-﻿using LsPay.Service.Contract;
+﻿using LsPay.Service.Wcf.Contract;
 using LsPay.Service.Wcf.Model;
 using LsPay.Service.Wcf.Model.Card;
 using System.ServiceModel;

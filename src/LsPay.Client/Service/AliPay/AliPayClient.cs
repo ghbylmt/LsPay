@@ -1,4 +1,4 @@
-﻿using LsPay.Service.Contract;
+﻿using LsPay.Service.Wcf.Contract;
 using LsPay.Service.Wcf.Model.Alipay;
 using LsPay.Service.Wcf.Model.Alipay.response;
 using System.ServiceModel;
@@ -16,7 +16,7 @@ namespace LsPay.Client.Service.AliPay
             : base(binding, edpAddr) { }
         public PrecreateResponseModel PreCreate(PrecreateModel precreateModel)
         {
-            return base.Channel.PreCreate(precreateModel);
+            return Channel.PreCreate(precreateModel);
         }
 
         public TradepayResponseModel TradePay(TradepayModel tradepayModel)

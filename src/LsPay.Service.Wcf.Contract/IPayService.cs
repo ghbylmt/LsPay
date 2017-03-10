@@ -1,7 +1,7 @@
 ﻿using System.ServiceModel;
 using LsPay.Service.Wcf.Model;
 
-namespace LsPay.Service.Contract
+namespace LsPay.Service.Wcf.Contract
 {
     [ServiceContract]
     public interface IPayService

@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel;
 using LsPay.Service.Wcf.Model;
-using LsPay.Service.Contract;
+using LsPay.Service.Wcf.Contract;
 
 namespace LsPay.Client.Service.Pay
 {

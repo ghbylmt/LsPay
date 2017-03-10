@@ -9,7 +9,7 @@ using LsPay.Service.Wcf.Model.WxPay;
 using LsPay.Service.Wcf.Model.WxPay.micropay;
 using LsPay.Service.Wcf.Model.WxPay.response;
 
-namespace LsPay.Service.Contract
+namespace LsPay.Service.Wcf.Contract
 {
     /// <summary>
     /// 微信支付服务接口定义

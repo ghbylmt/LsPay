@@ -1,4 +1,4 @@
-﻿using LsPay.Service.Contract;
+﻿using LsPay.Service.Wcf.Contract;
 using LsPay.Service.Pays.WxPay;
 using LsPay.Service.Wcf.Model.WxPay;
 using LsPay.Service.Wcf.Model.WxPay.micropay;

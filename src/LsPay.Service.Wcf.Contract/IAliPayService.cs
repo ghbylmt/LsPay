@@ -8,7 +8,7 @@ using LsPay.Service.Wcf.Model;
 using LsPay.Service.Wcf.Model.Alipay;
 using LsPay.Service.Wcf.Model.Alipay.response;
 
-namespace LsPay.Service.Contract
+namespace LsPay.Service.Wcf.Contract
 {
     [ServiceContract]
     public interface IAliPayService

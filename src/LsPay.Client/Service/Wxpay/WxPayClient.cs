@@ -2,7 +2,7 @@
 using LsPay.Service.Wcf.Model.WxPay;
 using LsPay.Service.Wcf.Model.WxPay.micropay;
 using LsPay.Service.Wcf.Model.WxPay.response;
-using LsPay.Service.Contract;
+using LsPay.Service.Wcf.Contract;
 
 namespace LsPay.Client.Service.Wxpay
 {

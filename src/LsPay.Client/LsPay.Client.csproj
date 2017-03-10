@@ -83,7 +83,9 @@
     <Compile Include="Util\Utility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LsPay.Setttings.xml" />
+    <Content Include="LsPay.Setttings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LsPay.Service.Wcf.Contract\LsPay.Service.Wcf.Contract.csproj">

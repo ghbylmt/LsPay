@@ -817,9 +817,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="RSAKeys\alipay_rsa_public_key.pem" />
-    <None Include="RSAKeys\rsa_private_key.pem" />
-    <None Include="RSAKeys\rsa_public_key.pem" />
+    <None Include="RSAKeys\alipay_rsa_public_key.pem">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="RSAKeys\rsa_private_key.pem">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="RSAKeys\rsa_public_key.pem">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sdk\readme.txt" />

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using LsPay.Service.Contract;
+using LsPay.Service.Wcf.Contract;
 using LsPay.Service.Interface;
 using LsPay.Service.Wcf.ServiceValidate.Attributes;
 using LsPay.Service.Wcf.Model;

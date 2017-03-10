@@ -1,4 +1,4 @@
-﻿using LsPay.Service.Contract;
+﻿using LsPay.Service.Wcf.Contract;
 using LsPay.Service.Pays.AliPay;
 using LsPay.Service.Wcf.Model.Alipay;
 using LsPay.Service.Wcf.Model.Alipay.response;
