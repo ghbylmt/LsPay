@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using Newtonsoft.Json;
 
 namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
 {
@@ -78,7 +79,7 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
             string result = "";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream responseStream = response.GetResponseStream();
-            using (StreamReader reader = new StreamReader(responseStream, Encoding.GetEncoding("GBK")))
+            using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
             {
                 result = reader.ReadToEnd();
                 reader.Close();
@@ -90,6 +91,19 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
         private static bool CheckValidationResult(object sender, System.Security.Cryptography.X509Certificates.X509Certificate certificate, System.Security.Cryptography.X509Certificates.X509Chain chain, SslPolicyErrors sslPolicyErrors)
         {
             return true;
+        }
+
+        public static TRes HttpPost<TReq,TRes>(string url, TReq request)
+        {
+            string reuslt = WebUtils.HttpPost(url, JsonConvert.SerializeObject(request));
+            TRes response = JsonConvert.DeserializeObject<TRes>(reuslt);
+            return response;
+        }
+        public static TRes HttpGet<TReq, TRes>(string url, TReq request)
+        {
+            string reuslt = WebUtils.HttpGet(url, JsonConvert.SerializeObject(request));
+            TRes response = JsonConvert.DeserializeObject<TRes>(reuslt);
+            return response;
         }
     }
 }

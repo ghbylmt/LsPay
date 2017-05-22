@@ -7,6 +7,17 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk
 {
     public class Config
     {
-        public const string Key = "123456";
+        /// <summary>
+        /// 秘钥
+        /// </summary>
+        public const string Key = "7D5C3B70367BE6A4A977AD9F3A1BF343";
+        /// <summary>
+        /// 商户号
+        /// </summary>
+        public const int Merchant_id = 10001815;
+        /// <summary>
+        /// 激活码
+        /// </summary>
+        public const string ActiveCode = "";
     }
 }

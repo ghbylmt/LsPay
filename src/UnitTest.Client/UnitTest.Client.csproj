@@ -57,11 +57,16 @@
   <ItemGroup>
     <Compile Include="AlipayTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XuanPayTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LsPay.Client\LsPay.Client.csproj">
       <Project>{93f7d54a-caa6-42e7-8384-33430c36eb79}</Project>
       <Name>LsPay.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LsPay.Service.Pays.XuanLifePay\LsPay.Service.Pays.XuanLifePay.csproj">
+      <Project>{11c653ed-d878-477d-9285-a88b5b66e38b}</Project>
+      <Name>LsPay.Service.Pays.XuanLifePay</Name>
     </ProjectReference>
     <ProjectReference Include="..\LsPay.Service.Wcf.Contract\LsPay.Service.Wcf.Contract.csproj">
       <Project>{63686048-dc70-424d-9fe1-2ebe531f6de3}</Project>

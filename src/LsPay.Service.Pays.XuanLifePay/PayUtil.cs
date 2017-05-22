@@ -1,4 +1,5 @@
 ﻿using LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.request;
+using LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.response;
 using LsPay.Service.Pays.XuanLifePay.Sdk.Util;
 using Newtonsoft.Json;
 using System;
@@ -13,10 +14,40 @@ namespace LsPay.Service.Pays.XuanLifePay
     /// </summary>
     public static class PayUtil
     {
-        public static void Precreate(TradePreCreateDto request)
+        public static ActiveResponse ActiveDevice(ActiveDeviceDto request)
+        {
+            var response = WebUtils.HttpGet<ActiveDeviceDto, ActiveResponse>("http://pay.xuanlife.com.cn/ManualActiveDevice", request);
+            return response;
+        }
+        /// <summary>
+        /// 下单
+        /// </summary>
+        /// <param name="request"></param>
+        public static TradePreCreateResponse Precreate(TradePreCreateDto request)
         {
             request.Sign = EncryptUtil.GetSign(request);
-            WebUtils.HttpPost("http://118.178.35.56/tradeprecreate", JsonConvert.SerializeObject(request));
+            var response = WebUtils.HttpPost<TradePreCreateDto, TradePreCreateResponse>("http://118.178.35.56/tradeprecreate",request);
+            return response;
         }
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="request"></param>
+        public static QueryResponse Query(QueryDto request)
+        {
+            var response = WebUtils.HttpPost<QueryDto, QueryResponse>("http://118.178.35.56/query", request);
+            return response;
+        }
+        /// <summary>
+        /// 退款
+        /// </summary>
+        /// <param name="request"></param>
+        public static RefundResponse Refund(RefundDto request)
+        {
+            request.sign = EncryptUtil.GetSign(request);
+            var response = WebUtils.HttpPost<RefundDto, RefundResponse>("http://118.178.35.56/refund", request);
+            return response;
+        }
+
     }
 }

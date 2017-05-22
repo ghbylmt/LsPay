@@ -28,7 +28,7 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
             List<PropertyInfo> properties = request.GetType().GetProperties().OrderBy(p=>p.Name).ToList();
             StringBuilder sb = new StringBuilder();
             properties.ForEach(p=>{
-                sb.AppendFormat("{0}={1}&", p.Name, p.GetValue(request,null));
+                sb.AppendFormat("{0}={1}&", p.Name, p.PropertyType.IsEnum ? p.GetValue(request, null).GetHashCode(): p.GetValue(request,null));
             });
             sb.AppendFormat("key={0}",Config.Key);
             return GetMD5_32(sb.ToString());
