@@ -41,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{52
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.Client", "UnitTest.Client\UnitTest.Client.csproj", "{239118B7-F948-41C3-8EB2-DF0279369DC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsPay.Service.Pays.XuanLifePay", "LsPay.Service.Pays.XuanLifePay\LsPay.Service.Pays.XuanLifePay.csproj", "{11C653ED-D878-477D-9285-A88B5B66E38B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{239118B7-F948-41C3-8EB2-DF0279369DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{239118B7-F948-41C3-8EB2-DF0279369DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{239118B7-F948-41C3-8EB2-DF0279369DC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C653ED-D878-477D-9285-A88B5B66E38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C653ED-D878-477D-9285-A88B5B66E38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C653ED-D878-477D-9285-A88B5B66E38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C653ED-D878-477D-9285-A88B5B66E38B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,5 +130,6 @@ Global
 		{D0D6A857-425C-49CC-A82B-3943979D4C7F} = {12543BDE-DA16-4C2E-9030-A355ADF8C3AA}
 		{93F7D54A-CAA6-42E7-8384-33430C36EB79} = {0D4E6B33-1C68-4FF0-922B-6DB6145BDAE2}
 		{239118B7-F948-41C3-8EB2-DF0279369DC3} = {527ECD7D-EB0E-4D96-B56E-BB26FC823C43}
+		{11C653ED-D878-477D-9285-A88B5B66E38B} = {12543BDE-DA16-4C2E-9030-A355ADF8C3AA}
 	EndGlobalSection
 EndGlobal
