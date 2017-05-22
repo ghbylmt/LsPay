@@ -16,7 +16,7 @@ namespace LsPay.Service.Pays.XuanLifePay
     {
         public static ActiveResponse ActiveDevice(ActiveDeviceDto request)
         {
-            var response = WebUtils.HttpGet<ActiveDeviceDto, ActiveResponse>("http://pay.xuanlife.com.cn/ManualActiveDevice", request);
+            var response = WebUtils.HttpGet<ActiveDeviceDto, ActiveResponse>("http://pay.xuanlife.com.cn/ManualActiveDevice?activeCode="+request.activeCode, request);
             return response;
         }
         /// <summary>

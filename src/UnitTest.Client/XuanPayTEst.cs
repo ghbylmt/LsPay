@@ -65,8 +65,8 @@ namespace UnitTest.Client
         public void ActiveDevice()
         {
             DateTime dtime = DateTime.Now;
-            PayUtil.Precreate(new ActiveDeviceDto {
-                activeCode = ""
+            PayUtil.ActiveDevice(new ActiveDeviceDto {
+                activeCode = "07563A"
             });
         }
 

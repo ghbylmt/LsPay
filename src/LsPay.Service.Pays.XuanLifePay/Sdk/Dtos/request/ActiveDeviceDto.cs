@@ -12,6 +12,6 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.request
         /// 由炫生活支付网关统一分配
         /// 6位
         /// </summary>
-        public int activeCode { get; set; }
+        public String activeCode { get; set; }
     }
 }

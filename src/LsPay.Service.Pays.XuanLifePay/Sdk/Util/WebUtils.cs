@@ -33,15 +33,11 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
             //request.Headers.Set("Content-Type", "text/xml; charset=GBK");
             request.Method = "GET";
             request.ContentType = "application/x-www-form-urlencoded";// "application/x-www-form-urlencoded";
-            Stream stream = request.GetRequestStream();
-            StreamWriter writer = new StreamWriter(stream, Encoding.GetEncoding("gb2312"));
-            writer.Write(postData);
-            writer.Close();
-
+            
             string result = "";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream responseStream = response.GetResponseStream();
-            using (StreamReader reader = new StreamReader(responseStream, Encoding.GetEncoding("GBK")))
+            using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
             {
                 result = reader.ReadToEnd();
                 reader.Close();
