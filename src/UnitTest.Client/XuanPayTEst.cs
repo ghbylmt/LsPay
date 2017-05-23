@@ -71,6 +71,20 @@ namespace UnitTest.Client
         }
 
         [TestMethod]
+        public void AddCasher()
+        {
+            DateTime dtime = DateTime.Now;
+            PayUtil.CasherOper(new CasherOpersDto
+            {
+                casher_name="自助机测试2",
+                casher_pwd="123456",
+                store_id= "1000566",
+                shopowner_pwd= "935047",
+                operatore_type=OperType.Create.GetHashCode().ToString()
+            });
+        }
+
+        [TestMethod]
         public void Precreate()
         {
             DateTime dtime = DateTime.Now;
@@ -78,9 +92,10 @@ namespace UnitTest.Client
                 discountable_amount=0,
                 undiscountable_amount=10,
                 total_amount= 10,
-                channel = PayChannel.Alipay,
+                channel = PayChannel.Alipay.GetHashCode().ToString(),
                 store_id= 1000566,
                 terminal_id= "152526",
+                operatore_id=5696,
                 out_trade_no= dtime.ToString("yyyyMMddHHmmss")+ dtime.Millisecond.ToString().PadLeft(4,'0'),
                 subject="测试商品"
             });

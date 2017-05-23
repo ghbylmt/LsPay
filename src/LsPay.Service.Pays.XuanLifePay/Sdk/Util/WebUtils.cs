@@ -68,7 +68,7 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
             request.Method = "POST";
             request.ContentType = "application/json";// "application/x-www-form-urlencoded";
             Stream stream = request.GetRequestStream();
-            StreamWriter writer = new StreamWriter(stream, Encoding.GetEncoding("gb2312"));
+            StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
             writer.Write(postData);
             writer.Close();
 
@@ -91,15 +91,21 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
 
         public static TRes HttpPost<TReq,TRes>(string url, TReq request)
         {
-            string reuslt = WebUtils.HttpPost(url, JsonConvert.SerializeObject(request));
+            string reuslt = WebUtils.HttpPost(url, GetJsonString(request));
             TRes response = JsonConvert.DeserializeObject<TRes>(reuslt);
             return response;
         }
         public static TRes HttpGet<TReq, TRes>(string url, TReq request)
         {
-            string reuslt = WebUtils.HttpGet(url, JsonConvert.SerializeObject(request));
+            string reuslt = WebUtils.HttpGet(url, GetJsonString(request));
             TRes response = JsonConvert.DeserializeObject<TRes>(reuslt);
             return response;
+        }
+
+        private static string GetJsonString(object obj)
+        {
+            var jSetting = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore};
+            return JsonConvert.SerializeObject(obj,Formatting.None, jSetting);
         }
     }
 }

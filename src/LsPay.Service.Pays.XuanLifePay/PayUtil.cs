@@ -20,6 +20,17 @@ namespace LsPay.Service.Pays.XuanLifePay
             return response;
         }
         /// <summary>
+        /// 收银员操作
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public static CasherOpersResponse CasherOper(CasherOpersDto request)
+        {
+            request.sign = EncryptUtil.GetSign(request);
+            var response = WebUtils.HttpPost<CasherOpersDto, CasherOpersResponse>("http://pay.xuanlife.com.cn/casherOpers", request);
+            return response;
+        }
+        /// <summary>
         /// 下单
         /// </summary>
         /// <param name="request"></param>

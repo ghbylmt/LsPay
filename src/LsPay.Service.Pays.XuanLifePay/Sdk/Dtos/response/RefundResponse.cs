@@ -61,6 +61,6 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.response
         /// <summary>
         /// 通道
         /// </summary>
-        public PayChannel channel { get; set; }
+        public int channel { get; set; }
     }
 }

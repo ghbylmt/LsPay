@@ -10,7 +10,7 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.request
         /// <summary>
         /// 商户代码
         /// </summary>
-        public int merchant_id { get { return Config.Merchant_id; } }
+        public string merchant_id { get { return Config.Merchant_id; } }
         /// <summary>
         /// 商户订单号
         /// </summary>

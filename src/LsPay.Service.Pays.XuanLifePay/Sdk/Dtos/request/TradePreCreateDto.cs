@@ -18,7 +18,7 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.request
         /// <summary>
         /// 支付渠道
         /// </summary>
-        public PayChannel channel { get; set; }
+        public string channel { get; set; }
         /// <summary>
         /// 收银员编号
         /// </summary>

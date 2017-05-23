@@ -25,12 +25,17 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
 
         public static string GetSign(object request)
         {
-            List<PropertyInfo> properties = request.GetType().GetProperties().OrderBy(p=>p.Name).ToList();
+            List<PropertyInfo> properties = request.GetType().GetProperties().Where(p => p.Name.ToLower() != "sign").OrderBy(p => p.Name).ToList();
             StringBuilder sb = new StringBuilder();
-            properties.ForEach(p=>{
-                sb.AppendFormat("{0}={1}&", p.Name, p.PropertyType.IsEnum ? p.GetValue(request, null).GetHashCode(): p.GetValue(request,null));
+            properties.ForEach(p =>
+            {
+                var value = p.PropertyType.IsEnum ? p.GetValue(request, null).GetHashCode() : p.GetValue(request, null);
+                if (value != null)
+                {
+                    sb.AppendFormat("{0}={1}&", p.Name, value);
+                }
             });
-            sb.AppendFormat("key={0}",Config.Key);
+            sb.AppendFormat("key={0}", Config.Key);
             return GetMD5_32(sb.ToString());
         }
     }

@@ -56,6 +56,7 @@
     <Compile Include="Sdk\Dtos\request\TradePayBaseDto.cs" />
     <Compile Include="Sdk\Dtos\request\TradePreCreateDto.cs" />
     <Compile Include="Sdk\Dtos\response\ActiveResponse.cs" />
+    <Compile Include="Sdk\Dtos\response\CasherOpersResponse.cs" />
     <Compile Include="Sdk\Dtos\response\QueryResponse.cs" />
     <Compile Include="Sdk\Dtos\response\RefundResponse.cs" />
     <Compile Include="Sdk\Dtos\response\TradePreCreateResponse.cs" />
