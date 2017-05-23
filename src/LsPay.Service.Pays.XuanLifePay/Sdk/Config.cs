@@ -14,10 +14,10 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk
         /// <summary>
         /// 商户号
         /// </summary>
-        public const int Merchant_id = 10001815;
+        public const int Merchant_id = 1005331;
         /// <summary>
         /// 激活码
         /// </summary>
-        public const string ActiveCode = "";
+        public const string ActiveCode = "466ACC";
     }
 }

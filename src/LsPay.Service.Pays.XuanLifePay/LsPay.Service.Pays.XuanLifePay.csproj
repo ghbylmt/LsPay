@@ -48,6 +48,8 @@
     <Compile Include="Sdk\Config.cs" />
     <Compile Include="Sdk\Dtos\BaseDto.cs" />
     <Compile Include="Sdk\Dtos\request\ActiveDeviceDto.cs" />
+    <Compile Include="Sdk\Dtos\request\CasherOpers.cs" />
+    <Compile Include="Sdk\Dtos\request\OperType.cs" />
     <Compile Include="Sdk\Dtos\request\PayChannel.cs" />
     <Compile Include="Sdk\Dtos\request\QueryDto.cs" />
     <Compile Include="Sdk\Dtos\request\RefundDto.cs" />

@@ -66,7 +66,7 @@ namespace UnitTest.Client
         {
             DateTime dtime = DateTime.Now;
             PayUtil.ActiveDevice(new ActiveDeviceDto {
-                activeCode = "07563A"
+                activeCode = "4EB019"
             });
         }
 
@@ -76,11 +76,11 @@ namespace UnitTest.Client
             DateTime dtime = DateTime.Now;
             PayUtil.Precreate(new TradePreCreateDto {
                 discountable_amount=0,
-                undiscountable_amount=1,
-                total_amount=1,
+                undiscountable_amount=10,
+                total_amount= 10,
                 channel = PayChannel.Alipay,
                 store_id= 1000566,
-                terminal_id="001",
+                terminal_id= "152526",
                 out_trade_no= dtime.ToString("yyyyMMddHHmmss")+ dtime.Millisecond.ToString().PadLeft(4,'0'),
                 subject="测试商品"
             });
