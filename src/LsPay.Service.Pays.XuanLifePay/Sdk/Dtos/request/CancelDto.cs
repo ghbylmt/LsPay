@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.request
 {
-    public class QueryDto:TradePayBaseDto
+    public class CancelDto : TradePayBaseDto
     {
         public string sign { get; set; }
     }

@@ -2,6 +2,7 @@
 using LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.request;
 using LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.response;
 using System;
+using System.Web;
 using System.Web.Services;
 
 namespace LsPay.XuanLifePay.WebService
@@ -32,7 +33,7 @@ namespace LsPay.XuanLifePay.WebService
             });
         }
         [WebMethod(Description = "预下单")]
-        public TradePreCreateResponse Precreate(int totalamount, int paychannel, int operid, string subject, string terminalid)
+        public TradePreCreateResponse Precreate(int totalamount, int paychannel, string operid, string subject, string terminalid,string out_tradeNo)
         {
             return PayUtil.Precreate(new TradePreCreateDto
             {
@@ -41,17 +42,18 @@ namespace LsPay.XuanLifePay.WebService
                 total_amount = totalamount.ToString(),
                 channel = paychannel.ToString(),
                 terminal_id = terminalid,
-                operatore_id = operid.ToString(),
-                out_trade_no = CreateTradeNo(),
-                subject = subject
+                operatore_id = operid,
+                out_trade_no = out_tradeNo,
+                subject =HttpUtility.UrlEncode(subject).ToUpper()
             });
         }
         [WebMethod(Description = "查询")]
-        public QueryResponse QueryOrder(string out_trade_no)
+        public QueryResponse QueryOrder(string out_trade_no,string terminal_id)
         {
             return PayUtil.Query(new QueryDto
             {
-                out_trade_no = out_trade_no
+                out_trade_no = out_trade_no,
+                terminal_id = terminal_id
             });
         }
         [WebMethod(Description = "退款")]
@@ -61,7 +63,17 @@ namespace LsPay.XuanLifePay.WebService
             {
                 out_trade_no = out_trade_no,
                 terminal_id = terminal_id,
-                refund_amount = refundAmount
+                refund_amount = refundAmount.ToString()
+            });
+        }
+
+        [WebMethod(Description = "撤销")]
+        public CancelResponse CancelOrder(string out_trade_no, string terminal_id)
+        {
+            return PayUtil.Cancel(new CancelDto
+            {
+                out_trade_no = out_trade_no,
+                terminal_id = terminal_id,
             });
         }
         private string CreateTradeNo()

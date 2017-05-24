@@ -34,7 +34,7 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.response
         /// </summary>
         public decimal merchant_id { get; set; }
         public decimal out_trade_no { get; set; }
-        public PayChannel channel { get; set; }
+        public int channel { get; set; }
         public string orderDate { get; set; }
         /// <summary>
         /// 网关平台流水号

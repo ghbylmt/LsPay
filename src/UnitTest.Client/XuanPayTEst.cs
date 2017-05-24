@@ -5,6 +5,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LsPay.Service.Pays.XuanLifePay;
 using LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.request;
+using System.Web;
 
 namespace UnitTest.Client
 {
@@ -94,7 +95,26 @@ namespace UnitTest.Client
                 terminal_id= "153254",
                 operatore_id= "5731",
                 out_trade_no= dtime.ToString("yyyyMMddHHmmss")+ dtime.Millisecond.ToString().PadLeft(4,'0'),
-                subject="测试商品"
+                subject= HttpUtility.UrlEncode("测试商品").ToUpper()
+            });
+        }
+        [TestMethod]
+        public void Query()
+        {
+            PayUtil.Query(new QueryDto
+            {
+                out_trade_no = "201705241546180565",
+                terminal_id = "153254"
+            });
+        }
+        [TestMethod]
+        public void Refund()
+        {
+            PayUtil.Refund(new RefundDto
+            {
+                out_trade_no = "201705241546180565",
+                terminal_id = "153254",
+                refund_amount = 10
             });
         }
     }

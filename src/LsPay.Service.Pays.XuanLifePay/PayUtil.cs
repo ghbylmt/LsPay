@@ -46,6 +46,7 @@ namespace LsPay.Service.Pays.XuanLifePay
         /// <param name="request"></param>
         public static QueryResponse Query(QueryDto request)
         {
+            request.sign = EncryptUtil.GetSign(request);
             var response = WebUtils.HttpPost<QueryDto, QueryResponse>("http://118.178.35.56/query", request);
             return response;
         }
@@ -60,5 +61,11 @@ namespace LsPay.Service.Pays.XuanLifePay
             return response;
         }
 
+        public static CancelResponse Cancel(CancelDto request)
+        {
+            request.sign = EncryptUtil.GetSign(request);
+            var response = WebUtils.HttpPost<CancelDto, CancelResponse>("http://118.178.35.56/refund", request);
+            return response;
+        }
     }
 }
