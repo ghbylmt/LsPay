@@ -78,8 +78,6 @@ namespace UnitTest.Client
             {
                 casher_name="自助机测试2",
                 casher_pwd="123456",
-                store_id= "1000566",
-                shopowner_pwd= "935047",
                 operatore_type=OperType.Create.GetHashCode().ToString()
             });
         }
@@ -89,13 +87,12 @@ namespace UnitTest.Client
         {
             DateTime dtime = DateTime.Now;
             PayUtil.Precreate(new TradePreCreateDto {
-                discountable_amount=0,
-                undiscountable_amount=10,
-                total_amount= 10,
+                discountable_amount="0",
+                undiscountable_amount="10",
+                total_amount= "10",
                 channel = PayChannel.Alipay.GetHashCode().ToString(),
-                store_id= 1000566,
-                terminal_id= "152526",
-                operatore_id=5696,
+                terminal_id= "153254",
+                operatore_id= "5731",
                 out_trade_no= dtime.ToString("yyyyMMddHHmmss")+ dtime.Millisecond.ToString().PadLeft(4,'0'),
                 subject="测试商品"
             });

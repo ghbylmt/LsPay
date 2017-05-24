@@ -9,8 +9,8 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.request
     public class CasherOpersDto
     {
         public string merchant_id { get { return Config.Merchant_id; } }
-        public string store_id { get; set; }
-        public string shopowner_pwd { get; set; }
+        public string store_id { get { return Config.Store_id; } }
+        public string shopowner_pwd { get { return Config.Pwd; } }
         public string operatore_type { get; set; }
         public string casher_no { get; set; }
         public string casher_name { get; set; }

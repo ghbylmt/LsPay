@@ -22,11 +22,11 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk
         /// <summary>
         /// 门店号
         /// </summary>
-        public const string Store_id = "100056";
+        public const string Store_id = "1000566";
         /// <summary>
         /// 密码
         /// </summary>
-        public const string Pwd = "610249";
+        public const string Pwd = "935047";
 
     }
 }

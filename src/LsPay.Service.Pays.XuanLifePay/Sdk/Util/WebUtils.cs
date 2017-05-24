@@ -66,9 +66,12 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
                 request = WebRequest.Create(url) as HttpWebRequest;
             }
             request.Method = "POST";
-            request.ContentType = "application/json";// "application/x-www-form-urlencoded";
+            request.ContentType = "application/json";
+            request.UserAgent = "Fiddler";
+            request.ContentLength = Encoding.UTF8.GetByteCount(postData);
+            //byte[] bytes = Encoding.UTF8.GetBytes(postData);
             Stream stream = request.GetRequestStream();
-            StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
+            StreamWriter writer = new StreamWriter(stream);
             writer.Write(postData);
             writer.Close();
 

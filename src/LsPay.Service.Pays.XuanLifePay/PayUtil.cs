@@ -27,7 +27,7 @@ namespace LsPay.Service.Pays.XuanLifePay
         public static CasherOpersResponse CasherOper(CasherOpersDto request)
         {
             request.sign = EncryptUtil.GetSign(request);
-            var response = WebUtils.HttpPost<CasherOpersDto, CasherOpersResponse>("http://pay.xuanlife.com.cn/casherOpers", request);
+            var response = WebUtils.HttpPost<CasherOpersDto, CasherOpersResponse>("http://kls-gate.xuanlife.com.cn/casherOpers", request);
             return response;
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace LsPay.Service.Pays.XuanLifePay
         /// <param name="request"></param>
         public static TradePreCreateResponse Precreate(TradePreCreateDto request)
         {
-            request.Sign = EncryptUtil.GetSign(request);
+            request.sign = EncryptUtil.GetSign(request);
             var response = WebUtils.HttpPost<TradePreCreateDto, TradePreCreateResponse>("http://118.178.35.56/tradeprecreate",request);
             return response;
         }

@@ -14,7 +14,7 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Util
         public static string GetMD5_32(string input)
         {
             System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
-            byte[] data = md5.ComputeHash(System.Text.Encoding.Default.GetBytes(input));
+            byte[] data = md5.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < data.Length; i++)
             {

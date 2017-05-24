@@ -7,6 +7,7 @@ namespace LsPay.Service.Pays.XuanLifePay.Sdk.Dtos.request
 {
     public class RefundDto : TradePayBaseDto
     {
+        public int refund_amount { get; set; }
         public string sign { get; set; }
     }
 }
