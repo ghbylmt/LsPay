@@ -88,10 +88,10 @@ namespace UnitTest.Client
         {
             DateTime dtime = DateTime.Now;
             PayUtil.Precreate(new TradePreCreateDto {
-                discountable_amount="0",
-                undiscountable_amount="10",
+                //discountable_amount="0",
+                //undiscountable_amount="10",
                 total_amount= "10",
-                channel = PayChannel.Alipay.GetHashCode().ToString(),
+                channel = PayChannel.Wxpay.GetHashCode().ToString(),
                 terminal_id= "153254",
                 operatore_id= "5731",
                 out_trade_no= dtime.ToString("yyyyMMddHHmmss")+ dtime.Millisecond.ToString().PadLeft(4,'0'),
@@ -114,7 +114,7 @@ namespace UnitTest.Client
             {
                 out_trade_no = "201705241546180565",
                 terminal_id = "153254",
-                refund_amount = 10
+                refund_amount = "10"
             });
         }
     }

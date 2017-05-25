@@ -35,17 +35,21 @@ namespace LsPay.XuanLifePay.WebService
         [WebMethod(Description = "预下单")]
         public TradePreCreateResponse Precreate(int totalamount, int paychannel, string operid, string subject, string terminalid,string out_tradeNo)
         {
-            return PayUtil.Precreate(new TradePreCreateDto
+            TradePreCreateDto dto = new TradePreCreateDto
             {
-                discountable_amount = "0",
-                undiscountable_amount = totalamount.ToString(),
                 total_amount = totalamount.ToString(),
                 channel = paychannel.ToString(),
                 terminal_id = terminalid,
                 operatore_id = operid,
                 out_trade_no = out_tradeNo,
-                subject =HttpUtility.UrlEncode(subject).ToUpper()
-            });
+                subject = HttpUtility.UrlEncode(subject).ToUpper()
+            };
+            if (paychannel == PayChannel.Alipay.GetHashCode())
+            {
+                dto.discountable_amount = "0";
+                dto.undiscountable_amount = totalamount.ToString();
+            }
+            return PayUtil.Precreate(dto);
         }
         [WebMethod(Description = "查询")]
         public QueryResponse QueryOrder(string out_trade_no,string terminal_id)
