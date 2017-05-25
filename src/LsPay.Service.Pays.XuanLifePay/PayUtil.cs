@@ -64,7 +64,7 @@ namespace LsPay.Service.Pays.XuanLifePay
         public static CancelResponse Cancel(CancelDto request)
         {
             request.sign = EncryptUtil.GetSign(request);
-            var response = WebUtils.HttpPost<CancelDto, CancelResponse>("http://118.178.35.56/refund", request);
+            var response = WebUtils.HttpPost<CancelDto, CancelResponse>("http://118.178.35.56/reverse", request);
             return response;
         }
     }
